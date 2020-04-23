@@ -1,7 +1,16 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Layout from "../layouts/index";
-import Img from "gatsby-image";
+import Img, { GatsbyImageProps } from "gatsby-image";
+
+type Product = {
+  id: string;
+  name: string;
+  price: string;
+  image: GatsbyImageProps & {
+    url: string;
+  };
+};
 
 export default () => (
   <StaticQuery
@@ -25,11 +34,20 @@ export default () => (
         site {
           siteMetadata {
             siteName
+            description
           }
         }
       }
     `}
-    render={(data) => (
+    render={(data: {
+      site: {
+        siteMetadata: {
+          siteName: string;
+          description: string;
+        };
+      };
+      products: { edges: { node: Product }[] };
+    }) => (
       <Layout site={data.site}>
         <div className="Catalogue">
           {data.products.edges.map(({ node: product }) => (
