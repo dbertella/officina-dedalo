@@ -1,8 +1,8 @@
 {
-  "name": "datocms-snipcart-gatsby-example",
-  "description": "An example project to demonstrate how you can integrate Gatsby, Snipcart and DatoCMS",
+  "name": "officina-dedalo",
+  "description": "Ecommerce project built with gatsby, dato cms and snipacart",
   "version": "1.0.0",
-  "author": "Stefano Verna <s.verna@datocms.com>",
+  "author": "Daniele Bertella <daniele.bertella@gmail.com>",
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.20.17",
