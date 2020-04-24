@@ -1,56 +1,55 @@
-import React, { FC } from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
+import React, { FC } from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import { Box, Flex } from 'theme-ui'
 
-import "../style/index.scss";
+import './reset.css'
 
 type Props = {
   site: {
     siteMetadata: {
-      siteName: string;
-      description: string;
-    };
-  };
-};
+      siteName: string
+      description: string
+    }
+  }
+}
 
 const Layout: FC<Props> = ({ children, site }) => (
-  <div>
+  <Box>
     <Helmet
       title={site.siteMetadata.siteName}
       description={site.siteMetadata.description}
     />
-    <div className="Container">
-      <div className="Header">
-        <div className="Wrap">
-          <div className="Header__body">
-            <h1 className="Header__title">
-              <Link data-text={site.siteMetadata.siteName} to="/">
-                {site.siteMetadata.siteName}
-              </Link>
-            </h1>
-            <div className="Header__summary snipcart-summary snipcart-checkout">
-              <div className="Header__summary__title">🛍 MY CART 🛍</div>
-              <div className="Header__summary__line">
-                Number of items: <span className="snipcart-total-items"></span>
-              </div>
-              <div className="Header__summary__line">
-                Total price: <span className="snipcart-total-price"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="Wrap">{children}</div>
-      <div className="Wrap">
-        <div className="Footer">
-          This website is just an example project to demonstrate how you can
-          integrate <a href="https://www.gatsbyjs.org/">Gatsby</a>,{" "}
-          <a href="https://snipcart.com/">Snipcart</a> and{" "}
-          <a href="https://www.datocms.com">DatoCMS</a>.
-        </div>
-      </div>
-    </div>
-  </div>
-);
+    <Box
+      sx={{
+        maxWidth: 1200,
+        margin: 'auto',
+      }}
+    >
+      <Flex
+        sx={{
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <h1>
+          <Link data-text={site.siteMetadata.siteName} to="/">
+            {site.siteMetadata.siteName}
+          </Link>
+        </h1>
+        <Box className="snipcart-summary snipcart-checkout">
+          <Box>🌵 Carrello 🌵</Box>
+          <Box>
+            Number of items: <span className="snipcart-total-items"></span>
+          </Box>
+          <Box>
+            Total price: <span className="snipcart-total-price"></span>
+          </Box>
+        </Box>
+      </Flex>
+      <Box>{children}</Box>
+    </Box>
+  </Box>
+)
 
-export default Layout;
+export default Layout

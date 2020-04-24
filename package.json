@@ -11,12 +11,14 @@
     "gatsby-plugin-sass": "^2.1.24",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-snipcart": "^1.1.2",
+    "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-typescript": "^2.3.3",
     "gatsby-source-datocms": "^2.2.0",
     "node-sass": "^4.12.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "theme-ui": "^0.3.1"
   },
   "keywords": [
     "gatsby"
@@ -29,8 +31,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "@types/react-helmet": "^5.0.15",
+    "@types/theme-ui": "^0.3.1",
+    "dotenv": "^8.2.0",
     "prettier": "^1.12.0",
     "typescript": "^3.8.3"
   }
