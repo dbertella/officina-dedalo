@@ -24,13 +24,30 @@ export const Product: FC<Props> = ({ product }) => (
       data-item-name={product.name}
       data-item-url={`/`}
     >
-      <Img sizes={product.image.sizes} />
-
-      <Box mb={4}>
-        <h4 sx={{ textAlign: 'center', fontWeight: 3 }}>{product.name}</h4>
+      <Box sx={{ position: 'relative' }}>
+        <Img sizes={product.image.sizes} />
         <Box
           sx={{
             bg: 'alphaBg',
+            color: 'background',
+            px: 1,
+            fontSize: 1,
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            textAlign: 'center',
+          }}
+        >
+          {Number(product.price).toLocaleString('it')} €
+        </Box>
+      </Box>
+
+      <Box mb={4}>
+        <h4 sx={{ textAlign: 'center', fontWeight: 3 }}>{product.name}</h4>
+
+        <Box
+          sx={{
+            bg: 'muted',
             color: 'background',
             py: 1,
             position: 'absolute',
@@ -41,7 +58,7 @@ export const Product: FC<Props> = ({ product }) => (
             borderRadius: '0 0 4px 4px',
           }}
         >
-          {Number(product.price).toLocaleString('it')} €
+          Aggiungi al carrello
         </Box>
       </Box>
     </Box>
