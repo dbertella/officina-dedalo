@@ -1,29 +1,42 @@
-import React, { FC } from 'react'
+/** @jsx jsx */
+import { FC } from 'react'
 import Img, { GatsbyImageProps } from 'gatsby-image'
-import { Box, Card } from 'theme-ui'
 
-type Product = {
+import { Box, Card, jsx } from 'theme-ui'
+import { Link } from 'gatsby'
+
+export type ProductType = {
   id: string
   name: string
   price: string
   image: GatsbyImageProps & {
     url: string
   }
+  imageGallery: GatsbyImageProps[]
+  video: {
+    url: string
+    title: string
+    provider: string
+    thumbnailUrl: string
+  }
+  description: string
+  descriptionNode: any
+  slug: string
+  seo: {
+    title: string
+    description: string
+    twitterCard: string
+    image: string
+  }
+  seoMetaTags: any
 }
 
 type Props = {
-  product: Product
+  product: ProductType
 }
 export const Product: FC<Props> = ({ product }) => (
   <Card key={product.id} sx={{ variant: 'primary', cursor: 'pointer' }}>
-    <Box
-      className="Product snipcart-add-item"
-      data-item-id={product.id}
-      data-item-price={product.price}
-      data-item-image={product.image.url}
-      data-item-name={product.name}
-      data-item-url={`/`}
-    >
+    <Link to={`products/${product.slug}`} sx={{ textDecoration: 'none' }}>
       <Box sx={{ position: 'relative' }}>
         <Img sizes={product.image.sizes} />
         <Box
@@ -43,9 +56,18 @@ export const Product: FC<Props> = ({ product }) => (
       </Box>
 
       <Box mb={4}>
-        <h4 sx={{ textAlign: 'center', fontWeight: 3 }}>{product.name}</h4>
-
-        <Box
+        <h4
+          sx={{
+            my: 1,
+            textAlign: 'center',
+            fontSize: 4,
+            fontFamily: 'cursive',
+            color: 'text',
+          }}
+        >
+          {product.name}
+        </h4>
+        <span
           sx={{
             bg: 'muted',
             color: 'background',
@@ -58,9 +80,9 @@ export const Product: FC<Props> = ({ product }) => (
             borderRadius: '0 0 4px 4px',
           }}
         >
-          Aggiungi al carrello
-        </Box>
+          Vai al prodotto
+        </span>
       </Box>
-    </Box>
+    </Link>
   </Card>
 )

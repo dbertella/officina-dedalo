@@ -3,8 +3,7 @@ import { jsx } from 'theme-ui'
 import { FC } from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-import { Logo } from '../components/Logo'
-import { Cart } from '../components/Cart'
+import { Logo } from './Logo'
 
 type Props = {
   site: {
@@ -32,7 +31,6 @@ const Layout: FC<Props> = ({ children, site }) => (
         variant: 'layout.header',
       }}
     >
-      <Cart />
       <div
         sx={{
           display: 'flex',

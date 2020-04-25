@@ -16,6 +16,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -41,13 +42,6 @@ module.exports = {
       options: {
         fonts: [`Poppins`, `Amatic SC`],
         display: 'swap',
-      },
-    },
-    {
-      resolve: `gatsby-plugin-snipcart`,
-      options: {
-        apiKey: process.env.SNIPCART_API_TOKEN,
-        autopop: true,
       },
     },
   ],

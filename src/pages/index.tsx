@@ -1,18 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { GatsbyImageProps } from 'gatsby-image'
 import { Grid } from 'theme-ui'
-import Layout from '../layouts/index'
-import { Product } from '../components/Product'
-
-type Product = {
-  id: string
-  name: string
-  price: string
-  image: GatsbyImageProps & {
-    url: string
-  }
-}
+import Layout from '../components/Layout'
+import { Product, ProductType } from '../components/Product'
 
 export default () => (
   <StaticQuery
@@ -24,6 +14,7 @@ export default () => (
               id
               name
               price
+              slug
               image {
                 url
                 sizes(maxWidth: 300, imgixParams: { fm: "jpg" }) {
@@ -48,7 +39,7 @@ export default () => (
           description: string
         }
       }
-      products: { edges: { node: Product }[] }
+      products: { edges: { node: ProductType }[] }
     }) => (
       <Layout site={data.site}>
         <Grid width={['1fr', 280]}>
