@@ -4,7 +4,7 @@ export default {
   fonts: {
     body: 'Poppins, sans-serif',
     heading: 'Poppins, sans-serif',
-    monospace: 'Menlo, monospace',
+    cursive: "'Amatic SC', cursive",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -19,7 +19,7 @@ export default {
   zIndices: [0, 1, 2, 3, 5, 8, 13],
   colors: {
     text: '#333',
-    alphaBg: 'rgba(23, 23, 23, 0.7)',
+    alphaBg: 'rgba(64,83,27, 0.7)',
     background: '#fff',
     primary: '#669253',
     secondary: '#d7f9f1',
@@ -39,28 +39,19 @@ export default {
       backgroundColor: 'black',
     },
     cartmobile: {
+      position: 'fixed',
       bg: 'alphaBg',
       color: 'background',
-      py: 2,
-      display: 'flex',
-      flexFlow: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      position: 'fixed',
-      bottom: 0,
+      top: 0,
       right: 0,
-      left: 0,
+      p: 2,
       zIndex: 3,
-      transform: 'translateY(62px)',
     },
     cartdesktop: {
       position: 'absolute',
+      bg: 'transparent',
       top: 3,
       right: 3,
-      left: 'auto',
-      bottom: 'auto',
-      p: 2,
-      transform: 'none',
     },
   },
   cards: {
@@ -106,7 +97,7 @@ export default {
     },
     h4: {
       color: 'text',
-      fontFamily: 'heading',
+      fontFamily: 'cursive',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 2,
@@ -135,14 +126,12 @@ export default {
       color: 'primary',
     },
     pre: {
-      fontFamily: 'monospace',
       overflowX: 'auto',
       code: {
         color: 'inherit',
       },
     },
     code: {
-      fontFamily: 'monospace',
       fontSize: 'inherit',
     },
     table: {

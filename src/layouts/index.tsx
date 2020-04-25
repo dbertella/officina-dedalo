@@ -69,7 +69,6 @@ const Layout: FC<Props> = ({ children, site }) => (
     </main>
     <footer
       sx={{
-        mb: [4, 0],
         variant: 'layout.footer',
       }}
     >

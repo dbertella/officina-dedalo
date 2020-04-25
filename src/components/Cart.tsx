@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Box } from 'theme-ui'
+import { FaShoppingCart } from 'react-icons/fa'
 
 export const Cart = () => (
   <div
@@ -8,14 +9,37 @@ export const Cart = () => (
       variant: ['layout.cartmobile', null, 'layout.cartdesktop'],
     }}
   >
-    <div>
-      <h4 sx={{ mt: -1, mb: 1, textAlign: 'center' }}>🌵 Carrello 🌵</h4>
-      <div>
-        Numero di elementi: <span className="snipcart-total-items"></span>
+    <div
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <div
+        sx={{
+          position: 'relative',
+          textAlign: 'center',
+          lineHeight: 1,
+        }}
+      >
+        <span
+          className="snipcart-total-items"
+          sx={{
+            position: 'absolute',
+            top: '5px',
+            left: 0,
+            right: 0,
+            fontSize: '10px',
+            fontWeight: 2,
+            color: 'primary',
+            pl: 1,
+          }}
+        />
+        <FaShoppingCart sx={{ fontSize: 4 }} />
       </div>
-      <div>
-        Prezzo totale: <span className="snipcart-total-price"></span>
-      </div>
+      <Box ml={1}>Carrello</Box>
+      {/* <span className="snipcart-total-price"></span> */}
     </div>
   </div>
 )
