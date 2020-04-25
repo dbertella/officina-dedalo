@@ -1,20 +1,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { FC } from 'react'
-import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import { Logo } from './Logo'
 
-type Props = {
-  site: {
-    siteMetadata: {
-      siteName: string
-      description: string
-    }
-  }
-}
-
-const Layout: FC<Props> = ({ children, site }) => (
+const Layout: FC = ({ children }) => (
   <div
     sx={{
       display: 'flex',
@@ -23,9 +13,6 @@ const Layout: FC<Props> = ({ children, site }) => (
       variant: 'layout.root',
     }}
   >
-    <Helmet title={site.siteMetadata.siteName}>
-      <meta name="description" content={site.siteMetadata.description} />
-    </Helmet>
     <header
       sx={{
         variant: 'layout.header',
@@ -41,7 +28,7 @@ const Layout: FC<Props> = ({ children, site }) => (
           p: 3,
         }}
       >
-        <Link data-text={site.siteMetadata.siteName} to="/">
+        <Link data-text="🌵Officina Il Dedalo" to="/">
           <Logo />
         </Link>
       </div>

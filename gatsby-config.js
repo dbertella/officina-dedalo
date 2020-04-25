@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    siteName: `🌵Officina Dedalo`,
+    siteName: `🌵Officina Il Dedalo`,
     description: `Nicola Bruni's e-commerce. Wood and steel products`,
   },
   plugins: [

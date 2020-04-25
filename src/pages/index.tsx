@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Grid } from 'theme-ui'
 import Layout from '../components/Layout'
@@ -41,7 +42,10 @@ export default () => (
       }
       products: { edges: { node: ProductType }[] }
     }) => (
-      <Layout site={data.site}>
+      <Layout>
+        <Helmet title={data.site.siteMetadata.siteName}>
+          <meta name="description" content={data.site.siteMetadata.description} />
+        </Helmet>
         <Grid width={['1fr', 280]}>
           {data.products.edges.map(({ node: product }) => (
             <Product key={product.id} product={product} />

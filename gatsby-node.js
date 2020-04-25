@@ -9,7 +9,7 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     graphql(`
       {
         allDatoCmsProduct {
@@ -24,7 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
       result.data.allDatoCmsProduct.edges.map(({ node: product }) => {
         createPage({
           path: `products/${product.slug}`,
-          component: path.resolve(`./src/pages/products.tsx`),
+          component: path.resolve(`./src/templates/products.tsx`),
           context: {
             slug: product.slug,
           },
