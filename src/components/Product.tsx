@@ -27,8 +27,7 @@ export const Product: FC<Props> = ({ product }) => (
       <Img sizes={product.image.sizes} />
 
       <Box mb={4}>
-        <h4 sx={{ textAlign: 'center' }}>{product.name}</h4>
-        {/* <Box>{product.price} €</Box> */}
+        <h4 sx={{ textAlign: 'center', fontWeight: 3 }}>{product.name}</h4>
         <Box
           sx={{
             bg: 'alphaBg',
@@ -42,7 +41,7 @@ export const Product: FC<Props> = ({ product }) => (
             borderRadius: '0 0 4px 4px',
           }}
         >
-          Compra subito
+          {Number(product.price).toLocaleString('it')} €
         </Box>
       </Box>
     </Box>
