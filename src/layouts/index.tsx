@@ -2,8 +2,10 @@ import React, { FC } from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import { Box, Flex } from 'theme-ui'
+import Img from 'gatsby-image'
 
 import './reset.css'
+import { Logo } from './Logo'
 
 type Props = {
   site: {
@@ -34,7 +36,7 @@ const Layout: FC<Props> = ({ children, site }) => (
       >
         <h1>
           <Link data-text={site.siteMetadata.siteName} to="/">
-            {site.siteMetadata.siteName}
+            <Logo />
           </Link>
         </h1>
         <Box className="snipcart-summary snipcart-checkout">

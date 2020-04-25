@@ -10,6 +10,15 @@ module.exports = {
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATO_API_TOKEN,
@@ -23,4 +32,4 @@ module.exports = {
       },
     },
   ],
-};
+}
