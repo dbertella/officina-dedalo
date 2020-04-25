@@ -6,7 +6,8 @@ import { jsx } from 'theme-ui'
 export const Logo: FC = () => (
   <div
     sx={{
-      width: 500,
+      width: '100%',
+      maxWidth: [400, null, 500],
       lineHeight: 1,
     }}
   >

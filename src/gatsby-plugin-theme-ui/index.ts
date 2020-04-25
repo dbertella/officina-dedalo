@@ -1,12 +1,12 @@
 export default {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  breakpoints: ['40em', '56em', '64em'],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
   fonts: {
     body: 'Poppins, sans-serif',
     heading: 'Poppins, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  zIndices: [0, 1, 2, 3, 5, 8, 13],
   fontWeights: {
     body: 400,
     heading: 900,
@@ -16,6 +16,7 @@ export default {
     body: 1.625,
     heading: 1.25,
   },
+  zIndices: [0, 1, 2, 3, 5, 8, 13],
   colors: {
     text: '#333',
     alphaBg: 'rgba(23, 23, 23, 0.7)',
@@ -30,11 +31,50 @@ export default {
     header: {
       color: 'white',
       backgroundColor: 'primary',
+      position: 'relative',
+      mb: 3,
     },
     footer: {
       color: 'white',
       backgroundColor: 'black',
-      mb: 4,
+    },
+    cartmobile: {
+      bg: 'alphaBg',
+      color: 'background',
+      py: 2,
+      display: 'flex',
+      flexFlow: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      position: 'fixed',
+      bottom: 0,
+      right: 0,
+      left: 0,
+      zIndex: 3,
+      transform: 'translateY(62px)',
+    },
+    cartdesktop: {
+      position: 'absolute',
+      top: 3,
+      right: 3,
+      left: 'auto',
+      bottom: 'auto',
+      p: 2,
+      transform: 'none',
+    },
+  },
+  cards: {
+    primary: {
+      position: 'relative',
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+    },
+    compact: {
+      padding: 1,
+      borderRadius: 2,
+      border: '1px solid',
+      borderColor: 'muted',
     },
   },
   styles: {

@@ -29,7 +29,6 @@ const Layout: FC<Props> = ({ children, site }) => (
     </Helmet>
     <header
       sx={{
-        width: '100%',
         variant: 'layout.header',
       }}
     >
@@ -41,25 +40,25 @@ const Layout: FC<Props> = ({ children, site }) => (
           justifyContent: 'center',
           maxWidth: 1200,
           margin: 'auto',
+          p: 3,
         }}
       >
-        <h1>
-          <Link data-text={site.siteMetadata.siteName} to="/">
-            <Logo />
-          </Link>
-        </h1>
+        <Link data-text={site.siteMetadata.siteName} to="/">
+          <Logo />
+        </Link>
       </div>
     </header>
     <main
       sx={{
         width: '100%',
         flex: '1 1 auto',
+        mb: 4,
         variant: 'layout.main',
       }}
     >
       <div
         sx={{
-          maxWidth: 768,
+          maxWidth: 1200,
           mx: 'auto',
           px: 3,
           variant: 'layout.container',
@@ -70,11 +69,22 @@ const Layout: FC<Props> = ({ children, site }) => (
     </main>
     <footer
       sx={{
-        width: '100%',
+        mb: [4, 0],
         variant: 'layout.footer',
       }}
     >
-      Footer content
+      <div
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          maxWidth: 1200,
+          margin: 'auto',
+          p: 3,
+        }}
+      >
+        © {new Date().getFullYear()}, nicola bruni
+      </div>
     </footer>
   </div>
 )
