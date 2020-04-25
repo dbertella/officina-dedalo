@@ -1,14 +1,15 @@
 /** @jsx jsx */
 import { FC } from 'react'
 import logo from '../images/logo.png'
-import { Box, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
 export const Logo: FC = () => (
-  <Box
+  <div
     sx={{
       width: 500,
+      lineHeight: 1,
     }}
   >
     <img src={logo} alt="Officina Dedalo" sx={{ maxWidth: '100%' }} />
-  </Box>
+  </div>
 )

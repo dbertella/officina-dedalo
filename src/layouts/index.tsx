@@ -1,11 +1,10 @@
-import React, { FC } from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { FC } from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-import { Box, Flex } from 'theme-ui'
-import Img from 'gatsby-image'
-
-import './reset.css'
-import { Logo } from './Logo'
+import { Logo } from '../components/Logo'
+import { Cart } from '../components/Cart'
 
 type Props = {
   site: {
@@ -17,21 +16,31 @@ type Props = {
 }
 
 const Layout: FC<Props> = ({ children, site }) => (
-  <Box>
-    <Helmet
-      title={site.siteMetadata.siteName}
-      description={site.siteMetadata.description}
-    />
-    <Box
+  <div
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      variant: 'layout.root',
+    }}
+  >
+    <Helmet title={site.siteMetadata.siteName}>
+      <meta name="description" content={site.siteMetadata.description} />
+    </Helmet>
+    <header
       sx={{
-        maxWidth: 1200,
-        margin: 'auto',
+        width: '100%',
+        variant: 'layout.header',
       }}
     >
-      <Flex
+      <Cart />
+      <div
         sx={{
+          display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
+          maxWidth: 1200,
+          margin: 'auto',
         }}
       >
         <h1>
@@ -39,19 +48,35 @@ const Layout: FC<Props> = ({ children, site }) => (
             <Logo />
           </Link>
         </h1>
-        <Box className="snipcart-summary snipcart-checkout">
-          <Box>🌵 Carrello 🌵</Box>
-          <Box>
-            Number of items: <span className="snipcart-total-items"></span>
-          </Box>
-          <Box>
-            Total price: <span className="snipcart-total-price"></span>
-          </Box>
-        </Box>
-      </Flex>
-      <Box>{children}</Box>
-    </Box>
-  </Box>
+      </div>
+    </header>
+    <main
+      sx={{
+        width: '100%',
+        flex: '1 1 auto',
+        variant: 'layout.main',
+      }}
+    >
+      <div
+        sx={{
+          maxWidth: 768,
+          mx: 'auto',
+          px: 3,
+          variant: 'layout.container',
+        }}
+      >
+        {children}
+      </div>
+    </main>
+    <footer
+      sx={{
+        width: '100%',
+        variant: 'layout.footer',
+      }}
+    >
+      Footer content
+    </footer>
+  </div>
 )
 
 export default Layout

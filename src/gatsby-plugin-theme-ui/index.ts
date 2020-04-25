@@ -6,6 +6,7 @@ export default {
     monospace: 'Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  zIndices: [0, 1, 2, 3, 5, 8, 13],
   fontWeights: {
     body: 400,
     heading: 900,
@@ -16,11 +17,25 @@ export default {
     heading: 1.25,
   },
   colors: {
-    text: '#000',
+    text: '#333',
+    alphaBg: 'rgba(23, 23, 23, 0.7)',
     background: '#fff',
-    primary: '#609',
-    secondary: '#306',
-    muted: '#f6f6f6',
+    primary: '#669253',
+    secondary: '#d7f9f1',
+    muted: '#7aa095',
+    dark: '#40531b',
+    light: '#afbc88',
+  },
+  layout: {
+    header: {
+      color: 'white',
+      backgroundColor: 'primary',
+    },
+    footer: {
+      color: 'white',
+      backgroundColor: 'black',
+      mb: 4,
+    },
   },
   styles: {
     root: {
