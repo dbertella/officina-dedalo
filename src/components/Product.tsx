@@ -5,14 +5,16 @@ import Img, { GatsbyImageProps } from 'gatsby-image'
 import { Box, Card, jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
+type CmsImage = GatsbyImageProps & {
+  url: string
+}
+
 export type ProductType = {
   id: string
   name: string
   price: string
-  image: GatsbyImageProps & {
-    url: string
-  }
-  imageGallery: GatsbyImageProps[]
+  image: CmsImage
+  imageGallery: CmsImage[]
   video: {
     url: string
     title: string
